@@ -1,3 +1,4 @@
 - import_playbook: playbooks/docker.yml
 - import_playbook: playbooks/zookeeper.yml
 - import_playbook: playbooks/kafka.yml
+- import_playbook: playbooks/solution1.yml

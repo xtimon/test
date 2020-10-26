@@ -35,6 +35,10 @@ Vagrant.configure("2") do |config|
               "zookeeper_id" => 1,
               "kafka_broker_id" => 1,
               "kafka_advertised_host_name" => "192.168.77.21",
+            },
+            "machine2" => {
+              "solution1_kafka_topic" => "input",
+              "solution1_kafka_bootstap_servers" => "192.168.77.21:9092",
             }
           }
         end

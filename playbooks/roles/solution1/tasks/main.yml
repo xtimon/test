@@ -1,0 +1,35 @@
+---
+# - name: Install kafka-python
+#   pip:
+#     name: kafka-python==2.0.2
+#     executable: /usr/bin/pip3
+
+- name: Install kafka-python
+  command: /usr/bin/pip3 install kafka-python==2.0.2
+  args:
+    creates: /usr/local/lib/python3.6/site-packages/kafka/version.py
+
+- name: Copy source
+  copy:
+    src: "{{ role_path }}/files/solution1.py"
+    dest: /usr/local/src/solution1.py
+    mode: '0644'
+
+- name: Create user
+  user:
+    name: solution1
+    state: present
+    shell: /sbin/nologin
+    system: yes
+    createhome: no
+
+- name: Create servicefile
+  template:
+    src: "{{ role_path }}/templates/solution1.service.j2"
+    dest: /etc/systemd/system/solution1.service
+    mode: '0644'
+
+- name: Start solution1
+  systemd:
+    state: started
+    name: solution1
