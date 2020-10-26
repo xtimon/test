@@ -1,0 +1,4 @@
+---
+zookeeper_image: zookeeper:3.6.2
+zookeeper_id: 1
+zookeeper_servers_list: "server.1=0.0.0.0:2888:3888 server.2=zoo2_ip:2888:3888 server.3=zoo3_ip:2888:3888"

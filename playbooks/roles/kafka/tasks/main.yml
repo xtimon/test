@@ -1,0 +1,25 @@
+- name: Kafka container
+  docker_container:
+    name: "{{ kafka_container_name }}"
+    image: "{{ kafka_image }}"
+    restart_policy: always
+    env: 
+      KAFKA_ADVERTISED_HOST_NAME: "{{ kafka_advertised_host_name | string }}"
+      KAFKA_ADVERTISED_PORT: "{{ kafka_advertised_port | string }}"
+      KAFKA_BROKER_ID: "{{ kafka_broker_id | string }}"
+      KAFKA_ZOOKEEPER_CONNECT: "{{ kafka_zookeeper_connect | string }}"
+      KAFKA_CREATE_TOPICS: "{{ kafka_create_topics | string }}"
+      KAFKA_HEAP_OPTS: "{{ kafka_heap_opts | string }}"
+      KAFKA_NUM_REPLICA_FETCHERS: "{{ kafka_num_replica_fetchers | string }}"
+      KAFKA_LOG_RETENTION_HOURS: "{{ kafka_log_retention_hours | string }}"
+      KAFKA_ZOOKEEPER_CONNECTION_TIMEOUT_MS: "{{ kafka_zookeeper_connection_timeout_ms | string }}" 
+      KAFKA_NUM_NETWORK_THREADS: "{{ kafka_num_network_threads | string }}"
+      KAFKA_SOCKET_RECEIVE_BUFFER_BYTES: "{{ kafka_socket_receive_buffer_bytes | string }}"
+      KAFKA_SOCKET_SEND_BUFFER_BYTES: "{{ kafka_socket_send_buffer_bytes | string }}"
+      KAFKA_QUEUED_MAX_REQUESTS: "{{ kafka_queued_max_requests | string }}"
+      KAFKA_FETCH_PURGATORY_PURGE_INTERVAL_REQUESTS: "{{ kafka_fetch_purgatory_purge_interval_requests | string }}"
+      KAFKA_PRODUCER_PURGATORY_PURGE_INTERVAL_REQUESTS: "{{ kafka_producer_purgatory_purge_interval_requests | string }}"
+      JMX_PORT: "5555"
+    network_mode: host
+  tags:
+    - kafka
