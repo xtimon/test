@@ -11,15 +11,15 @@
 
 - name: Copy source
   copy:
-    src: "{{ role_path }}/files/solution1.py"
-    dest: /usr/local/src/solution1.py
+    src: "{{ role_path }}/files/solution2.py"
+    dest: /usr/local/src/solution2.py
     mode: '0644'
   notify:
-    - Restart solution1
+    - Restart solution2
 
 - name: Create user
   user:
-    name: solution1
+    name: solution2
     state: present
     shell: /sbin/nologin
     system: yes
@@ -27,14 +27,14 @@
 
 - name: Create servicefile
   template:
-    src: "{{ role_path }}/templates/solution1.service.j2"
-    dest: /etc/systemd/system/solution1.service
+    src: "{{ role_path }}/templates/solution2.service.j2"
+    dest: /etc/systemd/system/solution2.service
     mode: '0644'
   notify:
     - systemd daemon reload
-    - Restart solution1
+    - Restart solution2
 
-- name: Start solution1
+- name: Start solution2
   systemd:
     state: started
-    name: solution1
+    name: solution2

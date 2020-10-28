@@ -1,0 +1,4 @@
+---
+solution2_kafka_input_topic: input
+solution2_kafka_output_topic: input
+solution2_kafka_bootstap_servers: "server1:9092,server2:9092"

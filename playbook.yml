@@ -2,3 +2,4 @@
 - import_playbook: playbooks/zookeeper.yml
 - import_playbook: playbooks/kafka.yml
 - import_playbook: playbooks/solution1.yml
+- import_playbook: playbooks/solution2.yml

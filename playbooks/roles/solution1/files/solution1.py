@@ -15,6 +15,7 @@ logger.addHandler(logStreamHandler)
 def main():
     kafka_bootstrap_servers = get_kafka_bootstrap_servers()
     kafka_topic = get_kafka_topic()
+    logger.info(f"KAFKA_TOPIC={kafka_topic}")
     logger.info(f"Connecting to {kafka_bootstrap_servers}")
     producer = KafkaProducer(bootstrap_servers=kafka_bootstrap_servers,
                              value_serializer=lambda x: str(x).encode('utf-8'))

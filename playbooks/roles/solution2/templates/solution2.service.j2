@@ -1,0 +1,14 @@
+[Unit]
+Description=Jenkins Master Service
+After=syslog.target network.target
+
+[Service]
+User=solution2
+Group=solution2
+Environment=KAFKA_BOOTSTAP_SERVERS={{ solution2_kafka_bootstap_servers }}
+Environment=KAFKA_INPUT_TOPIC={{ solution2_kafka_input_topic }}
+Environment=KAFKA_OUTPUT_TOPIC={{ solution2_kafka_output_topic }}
+ExecStart=/usr/bin/python3 /usr/local/src/solution2.py
+
+[Install]
+WantedBy=multi-user.target

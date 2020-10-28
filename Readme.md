@@ -9,5 +9,6 @@ vagrant up
 
 ## Requirements
 
+- Virtualbox
 - Vagrant
 - Ansible

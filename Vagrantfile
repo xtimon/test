@@ -39,6 +39,9 @@ Vagrant.configure("2") do |config|
             "machine2" => {
               "solution1_kafka_topic" => "input",
               "solution1_kafka_bootstap_servers" => "192.168.77.21:9092",
+              "solution2_kafka_input_topic" => "input",
+              "solution2_kafka_output_topic" => "output",
+              "solution2_kafka_bootstap_servers" => "192.168.77.21:9092",
             }
           }
         end
