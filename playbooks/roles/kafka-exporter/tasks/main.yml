@@ -1,0 +1,9 @@
+- name: Kafka-exporter container
+  docker_container:
+    name: kafka_exporter
+    image: "{{ kafka_exporter_image }}"
+    restart_policy: always
+    command: "{{ kafka_exporter_arguments }}"
+    network_mode: host
+  tags:
+    - kafka-exporter

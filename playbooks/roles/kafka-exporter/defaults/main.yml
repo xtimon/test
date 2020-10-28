@@ -1,0 +1,2 @@
+kafka_exporter_image: danielqsj/kafka-exporter:v1.2.0
+kafka_exporter_arguments: "--kafka.server=kafka:9092"
