@@ -31,7 +31,6 @@
     dest: /etc/systemd/system/solution2.service
     mode: '0644'
   notify:
-    - systemd daemon reload
     - Restart solution2
 
 - name: Start solution2

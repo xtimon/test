@@ -1,9 +1,6 @@
 ---
 - name: Restart solution1
   service:
+    daemon_reload: true
     name: solution1
     state: restarted
-
-- name: systemd daemon reload
-  systemd:
-    daemon_reload: yes

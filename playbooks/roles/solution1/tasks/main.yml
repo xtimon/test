@@ -31,10 +31,10 @@
     dest: /etc/systemd/system/solution1.service
     mode: '0644'
   notify:
-    - systemd daemon reload
     - Restart solution1
 
 - name: Start solution1
   systemd:
+    daemon_reload: true
     state: started
     name: solution1
