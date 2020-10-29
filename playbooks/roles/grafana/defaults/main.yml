@@ -1,0 +1,6 @@
+---
+grafana_image: grafana/grafana:7.3.0
+grafana_container_name: grafana
+grafana_admin_user: admin
+grafana_admin_password: changeme
+grafana_prometheus_url: http://localhost:9090

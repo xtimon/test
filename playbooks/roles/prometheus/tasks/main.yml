@@ -20,6 +20,7 @@
     name: "{{ prometheus_container_name }}"
     image: "{{ prometheus_image }}"
     restart_policy: always
+    container_default_behavior: compatibility
     network_mode: host
     volumes:
       - "/etc/{{ prometheus_container_name }}.yml:/etc/prometheus/prometheus.yml:ro"

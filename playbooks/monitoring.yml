@@ -4,3 +4,4 @@
   roles:
     - role: roles/kafka-exporter
     - role: roles/prometheus
+    - role: roles/grafana

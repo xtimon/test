@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
 
       if machine_id == 3
         machine.vm.network "forwarded_port", guest: 9090, host: 9090
+        machine.vm.network "forwarded_port", guest: 3000, host: 3000
       end
 
       if machine_id == N

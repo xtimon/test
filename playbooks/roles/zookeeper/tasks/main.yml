@@ -3,6 +3,7 @@
   community.general.docker_container:
     name: "zookeeper-{{ zookeeper_id | string }}"
     image: "{{ zookeeper_image | string }}"
+    container_default_behavior: compatibility
     env:
       ZOO_MY_ID: "{{ zookeeper_id | string }}"
       ZOO_SERVERS: "{{ zookeeper_servers_list | string }}"

@@ -1,0 +1,3 @@
+---
+- name: Restart grafana
+  command: "docker restart {{ grafana_container_name }}"
