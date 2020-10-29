@@ -12,6 +12,10 @@ Vagrant.configure("2") do |config|
       machine.vm.hostname = "machine#{machine_id}"
       machine.vm.network "private_network", ip: "192.168.77.#{20+machine_id}"
 
+      if machine_id == 3
+        machine.vm.network "forwarded_port", guest: 9090, host: 9090
+      end
+
       if machine_id == N
         machine.vm.provision :ansible do |ansible|
           ansible.limit = "all"

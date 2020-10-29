@@ -1,0 +1,8 @@
+---
+prometheus_image: prom/prometheus:v2.22.0
+prometheus_container_name: prometheus
+prometheus_scrape_interval: 15s
+prometheus_evaluation_interval: 15s
+prometheus_scrape_timeout: 10s
+prometheus_job_prometheus_targets: "localhost:9090"
+prometheus_job_kafka_targets: "localhost:9308"

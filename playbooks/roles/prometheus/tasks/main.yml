@@ -1,0 +1,28 @@
+---
+- name: Prometheus configuration
+  template:
+    src: "{{ role_path }}/templates/prometheus.yml.j2"
+    dest: "/etc/{{ prometheus_container_name }}.yml"
+    mode: "0644"
+  notify:
+    - Restart prometheus
+  tags:
+    - prometheus
+
+- name: Prometheus volume
+  docker_volume:
+    name: "{{ prometheus_container_name }}"
+  tags:
+    - prometheus
+
+- name: Prometheus container
+  docker_container:
+    name: "{{ prometheus_container_name }}"
+    image: "{{ prometheus_image }}"
+    restart_policy: always
+    network_mode: host
+    volumes:
+      - "/etc/{{ prometheus_container_name }}.yml:/etc/prometheus/prometheus.yml:ro"
+      - "{{ prometheus_container_name }}:/prometheus"
+  tags:
+    - prometheus

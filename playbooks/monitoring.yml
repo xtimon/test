@@ -3,3 +3,4 @@
   become: yes
   roles:
     - role: roles/kafka-exporter
+    - role: roles/prometheus
