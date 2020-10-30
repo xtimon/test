@@ -1,5 +1,5 @@
 ---
-  - hosts: zookeeper
-    become: yes
-    roles:
-      - role: roles/kafka
+- hosts: kafka
+  become: yes
+  roles:
+    - role: roles/kafka
