@@ -10,7 +10,7 @@
     - prometheus
 
 - name: Prometheus volume
-  docker_volume:
+  community.general.docker_volume:
     name: "{{ prometheus_container_name }}"
   tags:
     - prometheus

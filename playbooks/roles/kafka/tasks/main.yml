@@ -1,5 +1,5 @@
 - name: Kafka volume
-  docker_volume:
+  community.general.docker_volume:
     name: "{{ kafka_container_name }}"
   tags:
     - kafka
