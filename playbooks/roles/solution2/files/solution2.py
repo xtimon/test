@@ -6,7 +6,7 @@ from kafka import KafkaConsumer
 
 
 logger = logging.getLogger('solution2')
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 logFormat = logging.Formatter('%(asctime)s : %(levelname)s : %(message)s')
 logStreamHandler = logging.StreamHandler()
 logStreamHandler.setFormatter(logFormat)
