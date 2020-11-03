@@ -39,11 +39,7 @@ def main():
 
 
 def get_kafka_bootstrap_servers() -> list:
-    bootstap_string = os.getenv('KAFKA_BOOTSTAP_SERVERS')
-    if not bootstap_string:
-        logger.error(
-            "KAFKA_BOOTSTAP_SERVERS environment variable is not defined. Exiting...")
-        exit(1)
+    bootstap_string = get_env('KAFKA_BOOTSTAP_SERVERS')
     return bootstap_string.split(',')
 
 
