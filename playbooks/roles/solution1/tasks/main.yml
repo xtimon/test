@@ -8,14 +8,18 @@
   command: /usr/bin/pip3 install kafka-python==2.0.2
   args:
     creates: /usr/local/lib/python3.6/site-packages/kafka/version.py
+  tags:
+    - solution1
 
 - name: Copy source
   copy:
     src: "{{ role_path }}/files/solution1.py"
     dest: /usr/local/src/solution1.py
-    mode: '0644'
+    mode: "0644"
   notify:
     - Restart solution1
+  tags:
+    - solution1
 
 - name: Create user
   user:
@@ -24,17 +28,23 @@
     shell: /sbin/nologin
     system: yes
     createhome: no
+  tags:
+    - solution1
 
 - name: Create servicefile
   template:
     src: "{{ role_path }}/templates/solution1.service.j2"
     dest: /etc/systemd/system/solution1.service
-    mode: '0644'
+    mode: "0644"
   notify:
     - Restart solution1
+  tags:
+    - solution1
 
 - name: Start solution1
   systemd:
     daemon_reload: true
     state: started
     name: solution1
+  tags:
+    - solution1

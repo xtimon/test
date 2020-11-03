@@ -1,6 +1,8 @@
 - name: Kafka volume
   docker_volume:
     name: "{{ kafka_container_name }}"
+  tags:
+    - kafka
 
 - name: Kafka container
   docker_container:
