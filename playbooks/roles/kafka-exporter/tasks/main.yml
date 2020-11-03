@@ -1,5 +1,5 @@
 - name: Kafka-exporter container
-  docker_container:
+  community.general.docker_container:
     name: kafka-exporter
     image: "{{ kafka_exporter_image }}"
     restart_policy: always

@@ -16,7 +16,7 @@
     - prometheus
 
 - name: Prometheus container
-  docker_container:
+  community.general.docker_container:
     name: "{{ prometheus_container_name }}"
     image: "{{ prometheus_image }}"
     restart_policy: always

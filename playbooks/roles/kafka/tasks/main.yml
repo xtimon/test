@@ -5,7 +5,7 @@
     - kafka
 
 - name: Kafka container
-  docker_container:
+  community.general.docker_container:
     name: "{{ kafka_container_name }}"
     image: "{{ kafka_image }}"
     restart_policy: always
